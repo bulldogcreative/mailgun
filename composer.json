@@ -1,6 +1,7 @@
 {
     "name": "bulldog/mailgun",
     "description": "Simple PHP Client for Mailgun",
+    "keywords": ["mailgun", "email"],
     "type": "library",
     "license": "MIT",
     "authors": [
