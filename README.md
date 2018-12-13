@@ -16,6 +16,19 @@ using PHP. I love Mailgun, but always felt like their PHP client included
 too many features for what I needed to do. So I wrote a very limited API
 client that only sends email.
 
+## Compatibility
+
+This package will work with, and tested on the following PHP versions:
+
+* 5.5
+* 5.6
+* 7.0
+* 7.1
+* 7.2
+* 7.3
+
+You must have the curl extension installed to use this package.
+
 ## Contributions
 
 Always welcome! Just keep it simple, please. Open an issue for discussion, then
