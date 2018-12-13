@@ -91,6 +91,7 @@ class Mailgun
             CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => $data,
             CURLOPT_USERPWD => 'api:'.$this->key,
+            CURLOPT_RETURNTRANSFER => 1,
         ];
 
         $curl = curl_init();
