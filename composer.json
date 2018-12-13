@@ -1,0 +1,20 @@
+{
+    "name": "bulldog/mailgun",
+    "description": "Simple PHP Client for Mailgun",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levi Durfee",
+            "email": "levi.durfee@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bulldog\\": "src/"
+        }
+    },
+    "require": {
+        "ext-curl": "*"
+    }
+}
