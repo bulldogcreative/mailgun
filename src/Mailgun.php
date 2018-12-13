@@ -40,7 +40,7 @@ class Mailgun
 
     /**
      * Pass in a domain name associated with your Mailgun account and an API
-     * key that works with it. It will then set these as properties of the 
+     * key that works with it. It will then set these as properties of the
      * class for use when calling the Mailgun API via PHP's CURL class.
      *
      * @param string $domain
