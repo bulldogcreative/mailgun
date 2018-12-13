@@ -1,9 +1,8 @@
 <?php
 
 use Bulldog\Mailgun;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-class MailgunTest extends PHPUnitTestCase
+class MailgunTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsInstanceOf()
     {
