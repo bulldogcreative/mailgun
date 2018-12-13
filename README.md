@@ -1,5 +1,11 @@
 # Very Simple Mailgun PHP Client
 
+[![Build Status](https://travis-ci.org/bulldogcreative/mailgun.svg?branch=master)](https://travis-ci.org/bulldogcreative/mailgun)
+[![Stable Release](https://packagist.org/packages/bulldog/mailgun)](https://img.shields.io/packagist/v/bulldog/mailgun.svg)
+[![Dev Release](https://packagist.org/packages/bulldog/mailgun)](https://img.shields.io/packagist/vpre/bulldog/mailgun.svg)
+[![License](https://github.com/bulldogcreative/mailgun/blob/master/LICENSE.md)](https://img.shields.io/github/license/bulldogcreative/mailgun.svg)
+![](https://img.shields.io/twitter/url/https/github.com/bulldogcreative/mailgun.svg?style=social)
+
 While Mailgun does an excellent job at implementing the adapter pattern, coding
 to an interface, using PSR, and other things, this package does not. The curl
 extension is the only requirement for this package. It is very small right
