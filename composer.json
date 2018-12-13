@@ -1,6 +1,7 @@
 {
     "name": "bulldog/mailgun",
     "description": "Simple PHP Client for Mailgun",
+    "keywords": ["mailgun", "email"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,5 +17,8 @@
     },
     "require": {
         "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     }
 }
