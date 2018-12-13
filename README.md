@@ -29,7 +29,7 @@ composer require bulldog/mailgun
 ```php
 <?php
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
-$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Text version of your message.');
+$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.');
 ```
 
 ### Advanced Usage
@@ -41,7 +41,7 @@ So if you need to *cc* someone, you would:
 ```php
 <?php
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
-$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Text version of your message.', [
+$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
 ]);
 ```
@@ -51,7 +51,7 @@ Or if you wanted to send an email email, you could do the following:
 ```php
 <?php
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
-$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Text version of your message.', [
+$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'html' => '<html><head></head><body><h1>Hi there</h1></body></html>',
 ]);
 ```
@@ -61,7 +61,7 @@ You can add as many additional params as you need.
 ```php
 <?php
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
-$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Text version of your message.', [
+$mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
     'v:important' => 'true',
     'o:tag' => 'client_x_email',
