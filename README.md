@@ -45,7 +45,7 @@ $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subje
 ]);
 ```
 
-Or if you wanted to send an email email, you could do the following:
+Or if you wanted to send an email, you could do the following:
 
 ```php
 <?php
