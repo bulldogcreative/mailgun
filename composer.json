@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "php": "^5.5.38",
+        "php": ">=5.5.38",
         "ext-curl": "*"
     },
     "require-dev": {
