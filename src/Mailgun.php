@@ -2,41 +2,41 @@
 
 namespace Bulldog;
 
-class Mailgun
+class Mailgun implements MailerInterface
 {
     /**
      * The domain name in your Mailgun account that you want to use when
      * sending out email. Each account may have serveral domains that
      * you can use. It is used as part of the URL that we post to.
      */
-    private $domain;
+    protected $domain;
 
     /**
      * You are given an API key when you sign-up for a Mailgun account. Each
      * request sent to the API must include an API key for authentication
      * of your account. And protect your API key like it is a password.
      */
-    private $key;
+    protected $key;
 
     /**
      * This is the API version of Mailgun that we are currently consuming with
      * this API client. Mailgun will increment this version if they add new
      * features that are not backwards compatible. You won't change this.
      */
-    private $version = '3';
+    protected $version = '3';
 
     /**
      * Mailgun provides us with an API that is built on HTTP and is RESTful.
      * This allows us to use the PHP Curl library to send data to an API
      * endpoint for each resource. Mailgun will return a JSON response.
      */
-    private $url = 'https://api.mailgun.net';
+    protected $url = 'https://api.mailgun.net';
 
     /**
-     * The JSON response from Mailgun is stored in this private property and
+     * The JSON response from Mailgun is stored in this protected property and
      * it can be accessed using the response method.
      */
-    private $response;
+    protected $response;
 
     /**
      * Pass in a domain name associated with your Mailgun account and an API
@@ -59,17 +59,20 @@ class Mailgun
      * @param string $from
      * @param string $subject
      * @param string $text
-     * @param array $data
-     * @return void
+     * @param array  $parameters
+     * 
+     * @see https://documentation.mailgun.com/en/latest/api-sending.html#sending
+     * 
+     * @return MailerInterface
      */
-    public function send($to, $from, $subject, $text, $data = [])
+    public function send($to, $from, $subject, $text, $parameters = [])
     {
-        $data['to'] = $to;
-        $data['from'] = $from;
-        $data['subject'] = $subject;
-        $data['text'] = $text;
+        $parameters['to'] = $to;
+        $parameters['from'] = $from;
+        $parameters['subject'] = $subject;
+        $parameters['text'] = $text;
 
-        $this->results = $this->call('messages', $data);
+        $this->response = $this->call('messages', $parameters);
 
         return $this;
     }
@@ -77,19 +80,19 @@ class Mailgun
     /**
      * Get the Mailgun response.
      *
-     * @return void
+     * @return object
      */
     public function response()
     {
-        return $this->response;
+        return json_decode($this->response);
     }
 
-    private function call($endpoint, $data)
+    protected function call($endpoint, $parameters)
     {
         $options = [
             CURLOPT_URL => $this->url.'/v'.$this->version.'/'.$this->domain.'/'.$endpoint,
             CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_POSTFIELDS => $parameters,
             CURLOPT_USERPWD => 'api:'.$this->key,
             CURLOPT_RETURNTRANSFER => 1,
         ];
