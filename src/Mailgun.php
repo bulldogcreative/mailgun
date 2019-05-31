@@ -60,9 +60,9 @@ class Mailgun implements MailerInterface
      * @param string $subject
      * @param string $text
      * @param array  $parameters
-     * 
+     *
      * @see https://documentation.mailgun.com/en/latest/api-sending.html#sending
-     * 
+     *
      * @return MailerInterface
      */
     public function send($to, $from, $subject, $text, $parameters = [])
@@ -95,6 +95,7 @@ class Mailgun implements MailerInterface
             CURLOPT_POSTFIELDS => $parameters,
             CURLOPT_USERPWD => 'api:'.$this->key,
             CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_USERAGENT => 'bulldog/mailgun (https://github.com/bulldogcreative/mailgun)',
         ];
 
         $curl = curl_init();
