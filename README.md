@@ -1,4 +1,4 @@
-# Very Simple Mailgun PHP Client
+# Simple PHP Mailgun Client
 
 [![Build Status](https://travis-ci.org/bulldogcreative/mailgun.svg?branch=master)](https://travis-ci.org/bulldogcreative/mailgun)
 ![](https://img.shields.io/packagist/v/bulldog/mailgun.svg)
@@ -7,13 +7,12 @@
 
 While Mailgun does an excellent job at implementing the adapter pattern, coding
 to an interface, using PSR, and other things, this package does not. The curl
-extension is the only requirement for this package. It is very small right
-now; it's only one class and it can only send email.
+extension is the only requirement for this package.
 
 I often found myself needing a quick, simple solution for sending email when
 using PHP. I love Mailgun, but always felt like their PHP client included
 too many features for what I needed to do. So I wrote a very limited API
-client that only sends email.
+client that only does one thing, and it does it well.
 
 ## Installation
 
