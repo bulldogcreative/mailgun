@@ -1,4 +1,4 @@
-# Very Simple Mailgun PHP Client
+# Simple PHP Mailgun Client
 
 [![Build Status](https://travis-ci.org/bulldogcreative/mailgun.svg?branch=master)](https://travis-ci.org/bulldogcreative/mailgun)
 ![](https://img.shields.io/packagist/v/bulldog/mailgun.svg)
@@ -7,13 +7,12 @@
 
 While Mailgun does an excellent job at implementing the adapter pattern, coding
 to an interface, using PSR, and other things, this package does not. The curl
-extension is the only requirement for this package. It is very small right
-now; it's only one class and it can only send email.
+extension is the only requirement for this package.
 
 I often found myself needing a quick, simple solution for sending email when
 using PHP. I love Mailgun, but always felt like their PHP client included
 too many features for what I needed to do. So I wrote a very limited API
-client that only sends email.
+client that only does one thing, and it does it well.
 
 ## Installation
 
@@ -27,6 +26,7 @@ composer require bulldog/mailgun
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.');
 ```
@@ -39,6 +39,7 @@ So if you need to *cc* someone, you would:
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
@@ -49,6 +50,7 @@ Or if you wanted to send an email, you could do the following:
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'html' => '<html><head></head><body><h1>Hi there</h1></body></html>',
@@ -59,6 +61,7 @@ You can add as many additional params as you need.
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
@@ -85,5 +88,5 @@ You must have the curl extension installed to use this package.
 ## Contributions
 
 Always welcome! Just keep it simple, please. Open an issue for discussion, then
-fork the repo, create a topic branch, and do a pull request. We can figure 
+fork the repo, create a topic branch, and do a pull request. We can figure
 everything else out later.
