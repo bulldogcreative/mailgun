@@ -27,6 +27,7 @@ composer require bulldog/mailgun
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.');
 ```
@@ -39,6 +40,7 @@ So if you need to *cc* someone, you would:
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
@@ -49,6 +51,7 @@ Or if you wanted to send an email, you could do the following:
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'html' => '<html><head></head><body><h1>Hi there</h1></body></html>',
@@ -59,6 +62,7 @@ You can add as many additional params as you need.
 
 ```php
 <?php
+use Bulldog\Mailgun;
 $mg = new Mailgun('mg.your-domain.com', 'key-tops3cretk3y');
 $mg->send('to.someone@example.com', 'from.someone@example.com', 'Important Subject', 'Your message.', [
     'cc' => 'copy.someone@example.com',
@@ -85,5 +89,5 @@ You must have the curl extension installed to use this package.
 ## Contributions
 
 Always welcome! Just keep it simple, please. Open an issue for discussion, then
-fork the repo, create a topic branch, and do a pull request. We can figure 
+fork the repo, create a topic branch, and do a pull request. We can figure
 everything else out later.
